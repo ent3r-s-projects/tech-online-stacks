@@ -25,3 +25,11 @@ body {
 .skipped {
   background-color: orange;
 }
+
+.flex {
+  display: flex;
+}
+
+#last-updated {
+  margin-bottom: 0;
+}

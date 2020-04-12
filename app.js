@@ -1,8 +1,12 @@
 const timeout = 10000; // ms
 const root = document.getElementById("root");
+const lastUpdated = document.getElementById("last-updated")
+
 
 function update() {
-  root.innerHTML = "";
+  let nextDiv = document.createElement("div");
+  nextDiv.classList = "flex";
+
   for (let i = 1; i < 5; i++) {
     let div = document.createElement("div");
     div.classList = [`stack-${i}`];
@@ -12,7 +16,6 @@ function update() {
     stack.classList = [`title-stack`];
 
     stack.appendChild(stacktext);
-
     div.appendChild(stack);
 
     fetch(`https://techo.gathering.org/api/status/station/${i}`)
@@ -42,8 +45,11 @@ function update() {
         });
       })
       .catch((err) => console.error(err));
-    root.appendChild(div);
+    nextDiv.appendChild(div);
   }
+  lastUpdated.innerText = `Last updated: ${new Date()}`;
+  root.innerHTML = "";
+  root.appendChild(nextDiv);
 }
 update();
 
