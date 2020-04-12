@@ -1,0 +1,27 @@
+.ok {
+  background-color: lightgreen;
+}
+
+.not-ok {
+  background-color: #ed2939;
+}
+
+#root {
+  display: flex;
+  min-height: 2000px;
+}
+.test > h2 {
+  padding: 0.3rem;
+}
+
+.test {
+  width: 95%;
+  flex-basis: 1 1 auto;
+  border-radius: 5px;
+}
+body {
+  background-color: #f1f1f1;
+}
+.skipped {
+  background-color: orange;
+}
