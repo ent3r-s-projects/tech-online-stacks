@@ -1,5 +1,7 @@
 const timeout = 10000; // ms
 const root = document.getElementById("root");
+const lastUpdated = document.getElementById("last-updated")
+
 
 function update() {
   let nextDiv = document.createElement("div");
@@ -45,6 +47,7 @@ function update() {
       .catch((err) => console.error(err));
     nextDiv.appendChild(div);
   }
+  lastUpdated.innerText = `Last updated: ${new Date()}`;
   root.innerHTML = "";
   root.appendChild(nextDiv);
 }

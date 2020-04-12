@@ -29,3 +29,7 @@ body {
 .flex {
   display: flex;
 }
+
+#last-updated {
+  margin-bottom: 0;
+}
